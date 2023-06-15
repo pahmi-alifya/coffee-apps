@@ -1,0 +1,11 @@
+export {default as Login} from './Auth/Login';
+export {default as Register} from './Auth/Register';
+export {default as Home} from './Home';
+export {default as PointHistory} from './PointHistory';
+export {default as Referral} from './Referral';
+export {default as MyReferral} from './Referral/MyReferral';
+export {default as OrderDetail} from './Order/OrderDetail';
+export {default as VoucherList} from './Order/VoucherList';
+export {default as Notification} from './Notification';
+export {default as Profile} from './Profile';
+export {default as Pin} from './Auth/Pin';

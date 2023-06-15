@@ -1,0 +1,65 @@
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+platform :ios, '12.4'
+install! 'cocoapods', :deterministic_uuids => false
+
+project 'JIWA', {
+ 'DebugDev' => :debug,
+ 'DebugProd' => :debug,
+ 'DebugStaging' => :debug,
+ 'ReleaseDev' => :release,
+ 'ReleaseProd' => :release,
+ 'ReleaseStaging' => :release,
+}
+
+target 'JIWA' do
+  config = use_native_modules!
+
+  # Flags change depending on the env values.
+  flags = get_default_flags()
+
+  use_react_native!(
+    :path => config[:reactNativePath],
+    # Hermes is now enabled by default. Disable by setting this flag to false.
+    # Upcoming versions of React Native may rely on get_default_flags(), but
+    # we make it explicit here to aid in the React Native upgrade process.
+    :hermes_enabled => true,
+    :fabric_enabled => flags[:fabric_enabled],
+    # Enables Flipper.
+    #
+    # Note that if you have use_frameworks! enabled, Flipper will not work and
+    # you should disable the next line.
+    :flipper_configuration => FlipperConfiguration.enabled,
+    # An absolute path to your application root.
+    :app_path => "#{Pod::Config.instance.installation_root}/.."
+  )
+  # React Native Permissions Environment
+  permissions_path = '../node_modules/react-native-permissions/ios'
+  pod 'Permission-LocationAccuracy', :path => "#{permissions_path}/LocationAccuracy"
+  pod 'Permission-LocationAlways', :path => "#{permissions_path}/LocationAlways"
+  pod 'Permission-LocationWhenInUse', :path => "#{permissions_path}/LocationWhenInUse"
+
+  target 'JIWATests' do
+    inherit! :complete
+    # Pods for testing
+  end
+
+  ENVFILES = {
+    'DebugStaging' => '$(PODS_ROOT)/../../.env.staging',
+    'ReleaseStaging' => '$(PODS_ROOT)/../../.env.staging',
+    'DebugProd' => '$(PODS_ROOT)/../../.env.production',
+    'ReleaseProd' => '$(PODS_ROOT)/../../.env.production',
+    'DebugDev' => '$(PODS_ROOT)/../../.env.development',
+    'ReleaseDev' => '$(PODS_ROOT)/../../.env.development',
+  }
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        if target.name == 'react-native-config'
+          config.build_settings['ENVFILE'] = ENVFILES[config.name]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,252 @@
+
+workflows:
+    android-production:
+        name: JIWA+
+        max_build_duration: 120
+        instance_type: mac_mini_m1
+        environment:
+            groups:
+            # Add the group environment variables in Codemagic UI (either in Application/Team variables) - https://docs.codemagic.io/variables/environment-variable-groups/
+                - keystore_credentials # <-- (Includes CM_KEYSTORE, CM_KEYSTORE_PASSWORD, CM_KEY_ALIAS_PASSWORD, CM_KEY_ALIAS_USERNAME)
+                  # CM_KEYSTORE <-- Put your keystore file here
+                  # CM_KEYSTORE_PASSWORD <-- Put your keystore password here
+                  # CM_KEY_ALIAS_PASSWORD <-- Put your keystore alias password here
+                  # CM_KEY_ALIAS_USERNAME <-- Put your keystore alias username here
+                - firebase_credentials
+            vars:
+                PACKAGE_NAME: "com.jiwa.jiwagroup" # <-- Put your package name here e.g. com.domain.myapp
+            node: latest
+        triggering:
+            events:
+                - push
+                - tag
+                - pull_request
+            branch_patterns:
+                - pattern: master
+                  include: true
+                  source: true
+        scripts:
+            - name: Install npm dependencies
+              script: |
+                yarn install
+            - name: Set Android SDK location
+              script: |
+                echo "sdk.dir=$ANDROID_SDK_ROOT" > "$FCI_BUILD_DIR/android/local.properties"
+            - name: Set up keystore
+              script: |
+                    echo $CM_KEYSTORE | base64 --decode > $CM_KEYSTORE_PATH               
+            - name: Build Production Release
+              script: |
+                # export NEW_BUILD_NUMBER=$(($(google-play get-latest-build-number --package-name "$PACKAGE_NAME" --tracks=alpha) + 1))
+                cd android && ./gradlew assembleProductionRelease
+        artifacts:
+            - android/app/build/outputs/apk/production/release/app-production-release.apk
+        publishing:
+            # See the following link for details about email publishing - https://docs.codemagic.io/publishing-yaml/distribution/#email
+            email:
+                recipients:
+                    - bosspulsa57@gmail.com
+                notify:
+                  success: true     # To not receive a notification when a build succeeds
+                  failure: false    # To not receive a notification when a build fails
+            slack: 
+              # See the following link about how to connect your Slack account - https://docs.codemagic.io/publishing-yaml/distribution/#slack
+              channel: '#general'
+              notify_on_build_start: true   # To receive a notification when a build starts
+              notify:
+                success: true               # To not receive a notification when a build succeeds
+                failure: false              # To not receive a notification when a build fails
+            firebase:
+              firebase_token: $FIREBASE_TOKEN
+              android:
+                app_id: 1:145651217698:android:0a157225e0357040b9217b
+                groups: 
+                  - developer
+    android-staging:
+        name: JIWA+ Staging
+        max_build_duration: 120
+        instance_type: mac_mini_m1
+        environment:
+            groups:
+            # Add the group environment variables in Codemagic UI (either in Application/Team variables) - https://docs.codemagic.io/variables/environment-variable-groups/
+                - keystore_credentials # <-- (Includes CM_KEYSTORE, CM_KEYSTORE_PASSWORD, CM_KEY_ALIAS_PASSWORD, CM_KEY_ALIAS_USERNAME)
+                  # CM_KEYSTORE <-- Put your keystore file here
+                  # CM_KEYSTORE_PASSWORD <-- Put your keystore password here
+                  # CM_KEY_ALIAS_PASSWORD <-- Put your keystore alias password here
+                  # CM_KEY_ALIAS_USERNAME <-- Put your keystore alias username here
+                - firebase_credentials
+            vars:
+                PACKAGE_NAME: "com.jiwa.staging" # <-- Put your package name here e.g. com.domain.myapp
+            node: latest
+        triggering:
+            events:
+                - push
+                - tag
+                - pull_request
+            branch_patterns:
+                - pattern: staging
+                  include: true
+                  source: true
+        scripts:
+            - name: Install npm dependencies
+              script: |
+                yarn install
+            - name: Set Android SDK location
+              script: |
+                echo "sdk.dir=$ANDROID_SDK_ROOT" > "$FCI_BUILD_DIR/android/local.properties"
+            - name: Set up keystore
+              script: |
+                    echo $CM_KEYSTORE | base64 --decode > $CM_KEYSTORE_PATH               
+            - name: Build Staging Release
+              script: |
+                # export NEW_BUILD_NUMBER=$(($(google-play get-latest-build-number --package-name "$PACKAGE_NAME" --tracks=alpha) + 1))
+                cd android && ./gradlew assembleStagingRelease
+        artifacts:
+            - android/app/build/outputs/apk/staging/release/app-staging-release.apk
+        publishing:
+            # See the following link for details about email publishing - https://docs.codemagic.io/publishing-yaml/distribution/#email
+            email:
+                recipients:
+                    - bosspulsa57@gmail.com
+                notify:
+                  success: true     # To not receive a notification when a build succeeds
+                  failure: false    # To not receive a notification when a build fails
+            slack: 
+              # See the following link about how to connect your Slack account - https://docs.codemagic.io/publishing-yaml/distribution/#slack
+              channel: '#general'
+              notify_on_build_start: true   # To receive a notification when a build starts
+              notify:
+                success: true               # To not receive a notification when a build succeeds
+                failure: false              # To not receive a notification when a build fails
+            firebase:
+              firebase_token: $FIREBASE_TOKEN
+              android:
+                app_id: 1:145651217698:android:fdc49c126e08a151b9217b
+                groups: 
+                  - developer
+                  - internal-tech
+                  - qa-tester
+    android-development:
+        name: JIWA+ Development
+        max_build_duration: 120
+        instance_type: mac_mini_m1
+        environment:
+            groups:
+            # Add the group environment variables in Codemagic UI (either in Application/Team variables) - https://docs.codemagic.io/variables/environment-variable-groups/
+                - keystore_credentials # <-- (Includes CM_KEYSTORE, CM_KEYSTORE_PASSWORD, CM_KEY_ALIAS_PASSWORD, CM_KEY_ALIAS_USERNAME)
+                  # CM_KEYSTORE <-- Put your keystore file here
+                  # CM_KEYSTORE_PASSWORD <-- Put your keystore password here
+                  # CM_KEY_ALIAS_PASSWORD <-- Put your keystore alias password here
+                  # CM_KEY_ALIAS_USERNAME <-- Put your keystore alias username here
+                - firebase_credentials
+            vars:
+                PACKAGE_NAME: "com.jiwa.development" # <-- Put your package name here e.g. com.domain.myapp
+            node: latest
+        triggering:
+            events:
+                - push
+                - tag
+                - pull_request
+            branch_patterns:
+                - pattern: develop
+                  include: true
+                  source: true
+        scripts:
+            - name: Install npm dependencies
+              script: |
+                yarn install
+            - name: Set Android SDK location
+              script: |
+                echo "sdk.dir=$ANDROID_SDK_ROOT" > "$FCI_BUILD_DIR/android/local.properties"
+            - name: Set up keystore
+              script: |
+                    echo $CM_KEYSTORE | base64 --decode > $CM_KEYSTORE_PATH               
+            - name: Build Development Release
+              script: |
+                # export NEW_BUILD_NUMBER=$(($(google-play get-latest-build-number --package-name "$PACKAGE_NAME" --tracks=alpha) + 1))
+                cd android && ./gradlew assembleDevelopmentRelease
+        artifacts:
+            - android/app/build/outputs/apk/development/release/app-development-release.apk
+        publishing:
+            # See the following link for details about email publishing - https://docs.codemagic.io/publishing-yaml/distribution/#email
+            email:
+                recipients:
+                    - bosspulsa57@gmail.com
+                notify:
+                  success: true     # To not receive a notification when a build succeeds
+                  failure: false    # To not receive a notification when a build fails
+            slack: 
+              # See the following link about how to connect your Slack account - https://docs.codemagic.io/publishing-yaml/distribution/#slack
+              channel: '#general'
+              notify_on_build_start: true   # To receive a notification when a build starts
+              notify:
+                success: true               # To not receive a notification when a build succeeds
+                failure: false              # To not receive a notification when a build fails
+            firebase:
+              firebase_token: $FIREBASE_TOKEN
+              android:
+                app_id: 1:145651217698:android:0304d680ef5ac326b9217b
+                groups: 
+                  - developer
+                  - internal-tech
+                  - qa-tester
+    android-preview:
+        name: JIWA+ QA Preview
+        max_build_duration: 120
+        instance_type: mac_mini_m1
+        environment:
+            groups:
+            # Add the group environment variables in Codemagic UI (either in Application/Team variables) - https://docs.codemagic.io/variables/environment-variable-groups/
+                - keystore_credentials # <-- (Includes CM_KEYSTORE, CM_KEYSTORE_PASSWORD, CM_KEY_ALIAS_PASSWORD, CM_KEY_ALIAS_USERNAME)
+                  # CM_KEYSTORE <-- Put your keystore file here
+                  # CM_KEYSTORE_PASSWORD <-- Put your keystore password here
+                  # CM_KEY_ALIAS_PASSWORD <-- Put your keystore alias password here
+                  # CM_KEY_ALIAS_USERNAME <-- Put your keystore alias username here
+                - firebase_credentials
+            vars:
+                PACKAGE_NAME: "com.jiwa.development" # <-- Put your package name here e.g. com.domain.myapp
+            node: latest
+        triggering:
+            events:
+                - push
+                - tag
+                - pull_request
+            branch_patterns:
+                - pattern: "preview/**"
+                  include: true
+                  source: true
+        scripts:
+            - name: Install npm dependencies
+              script: |
+                yarn install
+            - name: Set Android SDK location
+              script: |
+                echo "sdk.dir=$ANDROID_SDK_ROOT" > "$FCI_BUILD_DIR/android/local.properties"
+            - name: Set up keystore
+              script: |
+                    echo $CM_KEYSTORE | base64 --decode > $CM_KEYSTORE_PATH               
+            - name: Build Development Release
+              script: |
+                # export NEW_BUILD_NUMBER=$(($(google-play get-latest-build-number --package-name "$PACKAGE_NAME" --tracks=alpha) + 1))
+                cd android && ./gradlew assembleDevelopmentRelease
+            - name: Change Apk Name
+              script: |
+                mv android/app/build/outputs/apk/development/release/app-development-release.apk /
+                  android/app/build/outputs/apk/development/release/app-preview-release.apk
+        artifacts:
+            - android/app/build/outputs/apk/development/release/app-preview-release.apk
+        publishing:
+          email:
+            recipients:
+              - bosspulsa57@gmail.com
+            notify:
+              success: true
+              failure: true
+          firebase:
+              firebase_token: $FIREBASE_TOKEN
+              ios:
+                app_id: 1:145651217698:android:0a157225e0357040b9217b
+                groups: 
+                  - developer
+                  - internal-tech
+                  - qa-tester

@@ -1,0 +1,1 @@
+it('Define Register pages', () => {});

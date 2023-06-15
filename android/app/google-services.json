@@ -1,0 +1,186 @@
+{
+  "project_info": {
+    "project_number": "145651217698",
+    "project_id": "jiwaplus-proto",
+    "storage_bucket": "jiwaplus-proto.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:145651217698:android:0304d680ef5ac326b9217b",
+        "android_client_info": {
+          "package_name": "com.jiwa.development"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "145651217698-ugnf1edt2a4kor2inhhhbmc390ktulfa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jiwa.development",
+            "certificate_hash": "44ecf14966dbc1d91807a76b8cf0ed0277383458"
+          }
+        },
+        {
+          "client_id": "145651217698-mkn26gd1nmb2h9k5d0o0d03kr9c8apo8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnxljzCMAkBbOXYdWiduwRZQL0NalSId0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "145651217698-mkn26gd1nmb2h9k5d0o0d03kr9c8apo8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "145651217698-709mpu1oat2cfl66lum0fjgmst9lclch.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.jiwa.app.jiwadevelopment"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:145651217698:android:0a157225e0357040b9217b",
+        "android_client_info": {
+          "package_name": "com.jiwa.jiwagroup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "145651217698-pqscpt8k2kln7c4ccv6ge9upok2pqr0h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jiwa.jiwagroup",
+            "certificate_hash": "44ecf14966dbc1d91807a76b8cf0ed0277383458"
+          }
+        },
+        {
+          "client_id": "145651217698-mkn26gd1nmb2h9k5d0o0d03kr9c8apo8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnxljzCMAkBbOXYdWiduwRZQL0NalSId0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "145651217698-mkn26gd1nmb2h9k5d0o0d03kr9c8apo8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "145651217698-709mpu1oat2cfl66lum0fjgmst9lclch.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.jiwa.app.jiwadevelopment"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:145651217698:android:fdc49c126e08a151b9217b",
+        "android_client_info": {
+          "package_name": "com.jiwa.staging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "145651217698-43ei1td78j1k33pnrob7i18thqk1rkjh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jiwa.staging",
+            "certificate_hash": "44ecf14966dbc1d91807a76b8cf0ed0277383458"
+          }
+        },
+        {
+          "client_id": "145651217698-mkn26gd1nmb2h9k5d0o0d03kr9c8apo8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnxljzCMAkBbOXYdWiduwRZQL0NalSId0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "145651217698-mkn26gd1nmb2h9k5d0o0d03kr9c8apo8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "145651217698-709mpu1oat2cfl66lum0fjgmst9lclch.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.jiwa.app.jiwadevelopment"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:145651217698:android:32feed8c295dc608b9217b",
+        "android_client_info": {
+          "package_name": "com.jiwaplus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "145651217698-sdqdl1dnjer6mg7odokvv4m8ppr7pgto.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jiwaplus",
+            "certificate_hash": "44ecf14966dbc1d91807a76b8cf0ed0277383458"
+          }
+        },
+        {
+          "client_id": "145651217698-mkn26gd1nmb2h9k5d0o0d03kr9c8apo8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnxljzCMAkBbOXYdWiduwRZQL0NalSId0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "145651217698-mkn26gd1nmb2h9k5d0o0d03kr9c8apo8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "145651217698-709mpu1oat2cfl66lum0fjgmst9lclch.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.jiwa.app.jiwadevelopment"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,211 @@
+{
+  "example": "exmaple",
+  "Hello": "Hei",
+  "loading": "Loading...",
+  "tryAgain": "Try again",
+  "unknownError": "Unknown error",
+  "drawer": {
+    "language": "Language",
+    "customerService": "Customer Service",
+    "transaction": "Transaction",
+    "loyaltyMembership": "Loyalty Membership",
+    "savedAddress": "Saved Addresses",
+    "voucher": "Voucher",
+    "getFreeCoffee": "Get Free Coffee for you and your friends",
+    "enjoyPromo": "Enjoy all promos everyday for all favourite menu",
+    "otherInfo": "Other information",
+    "privacyPolicy": "Privacy Policy",
+    "logout": "Logout",
+    "giveRating": "Give Rating",
+    "footNote": "Contact Information for Consumer Complaints Service Directorate General of Consumer Protection and Trade Order, Ministry of Trade of the Republic of Indonesia",
+    "whatsApp": "Whatsapp Ditjen PKTN : 0853-1111-1010",
+    "greetings": "Hi",
+    "login": "Login",
+    "temanSejiwa": "Teman Sejiwa",
+    "seeProfile": "See Profile"
+  },
+  "home": {
+    "loginHere": "Login here",
+    "selectOutlet": "Select nearest outlet",
+    "notFound": "Hmm.. not found {{keyword}} ",
+    "notFoundDesc": "Please try entering the name of the menu, food or drink you want.",
+    "orderFromOutlet": "Order from outlet",
+    "searchMenu": "Search menu...",
+    "greetings": "Hi, {{name}}!",
+    "headerTitle": "Hi, Teman Sejiwa!",
+    "headerSubtitle": "Enjoy your coffee time",
+    "change": "Change",
+    "addToCart": "Add to Cart",
+    "voucher": "Voucher",
+    "note": "Notes",
+    "optional": "Optional",
+    "notePlaceholder": "Please fill the note",
+    "tabs": {
+      "delivery": "Delivery",
+      "pickup": "Pick Up"
+    }
+  },
+  "auth": {
+    "enter": "Login",
+    "submit": "Masuk",
+    "welcome": "Silahkan masuk dengan nomor ponsel yang terdaftar. Pastikan nomor kamu aktif.",
+    "termOfService": "Terms of Service",
+    "term": "Dengan masuk kamu menyetujui ",
+    "termTwo": "Syarat &",
+    "termThree": "Ketentuan dan kebijakan Privasi ",
+    "termFour": "jiwa +",
+    "enterSixNumber": "Masukan 6 angka untuk menjaga keamanan akun jiwa+ kamu",
+    "reEnterSixNumber": "Masukan 6 angka untuk menjaga keamanan akun jiwa+ kamu",
+    "sendOtp": "Kirim OTP",
+    "verificationNumber": "Verifikasi Nomor Ponsel Kamu",
+    "fillWithOtpCode": "Isi dengan kode OTP yang dikirimkan melalui whatsapp ke :",
+    "resendOtp": "Kirim ulang OTP setelah ",
+    "createPin": "Buat Pin",
+    "confirmPin": "Konfirmasi Pin",
+    "weWantYouKnowMore": "Kami ingin kenal kamu lebih dekat",
+    "formInfo": "Masukkan nama dan tanggal lahir kamu ya!",
+    "required": "Wajib diisi",
+    "noSpecialCharacter": "Tidak boleh menggunakan Special Characters",
+    "yourName": "Nama Kamu",
+    "male": "Laki-Laki",
+    "female": "Perempuan",
+    "citizen": "Kewarganegaraan",
+    "occupation": "Pekerjaan",
+    "referralCode": "Kode Referral (Optional)",
+    "incorrectPin": "Pin yang anda masukan tidak sama",
+    "somethingWrong": "Terjadi kesalahan silahkan ulangi kembali",
+    "invalidEmail": "Invalid email address",
+    "birthDate": "Tanggal lahir",
+    "profesional": "Wirausaha / Profesional",
+    "student": "Pelajar / Mahasiswa",
+    "employee": "Karyawan Swasta",
+    "civil": "Pegawai Negeri Sipil",
+    "housewife": "Ibu Rumah Tangga",
+    "unemployment": "Belum / Tidak bekerja",
+    "forgotPin": "Lupa dengan PIN kamu? ",
+    "gender": "Gender",
+    "dateTerm": "As of 6 October 2022",
+    "loginHere": "Login disini",
+    "confirm": "Konfirmasi",
+    "continue": "Lanjut",
+    "phoneNumber": "Nomor Ponsel",
+    "enterCountryName": "Enter country name",
+    "ageUnder12": "User must be over 12 years old",
+    "ageOver100": "That's not possible, are you immortal?"
+  },
+  "pointHistory": {
+    "title": "Plus Point History",
+    "totalPoint": "Current Total Plus Point",
+    "earnedPoint": "Earned Point",
+    "usedPoint": "Used Point",
+    "plusPoint": "Plus Point",
+    "emptyPlaceholderTitle": "Let's order the Jiwa+ menu!",
+    "emptyPlaceholderEarnedPointDescription": "The points from your order can be seen here",
+    "emptyPlaceholderUsedPointDescription": "Don't worry, no points have been used yet"
+  },
+  "userInformation": {
+    "loading": "Loading...",
+    "yourLocation": "Your Location :",
+    "activate": "Activate",
+    "points": "Points"
+  },
+  "productCard": {
+    "notAvailable": "Not\nAvailable"
+  },
+  "referral": {
+    "referral": "Referral",
+    "yourReferral": "Your Referral",
+    "freeCoffee": "Free Coffee For You!",
+    "get": "Get",
+    "buy1Get1": "Buy 1 Get 1",
+    "eachTimeInviting": "each time inviting your friends to use",
+    "jiwa+": "Jiwa+",
+    "shareCodeBelow": "Share the Code Below",
+    "share": "Share",
+    "bottomSheet": {
+      "howToRefer": "Referral How to",
+      "inviteYourFriend": "Invite your friend to use Jiwa+",
+      "shareYourUniqueLink": "Share your unique link to friend via Social Media or WhatsApp",
+      "letYourFriendsKnow": "Let your friends know to use your Referral Code",
+      "uponLogin": "Upon login with your referral code and making first transaction, you will get Buy 1 Get 1 Voucher.",
+      "enjoy": "Enjoy your Buy 1 Get 1 Voucher ",
+      "dontForget": "Dont forget to level up your Loyalty Membership for more rewards!"
+    }
+  },
+  "referralList": {
+    "friend": "Friend",
+    "invitedFriend": "Friends you invited",
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "notification": {
+    "title": "Notification",
+    "information": {
+      "titleTab": "Info",
+      "emptyState": {
+        "title": "Belum ada informasi",
+        "description": "Tenang aja, pas ada info penting langsung ada notifikasinya disini ya!"
+      }
+    },
+    "promotion": {
+      "titleTab": "Promo",
+      "emptyState": {
+        "title": "Belum ada informasi promo",
+        "description": "Informasi promo kamu nanti bisa lihat disini ya!"
+      }
+    },
+    "profile": {
+      "detailProfile": {
+        "yourName": "Your Name",
+        "gender": "Gender",
+        "dob": "Birthdate",
+        "emailAddress": "Email Address",
+        "phoneNumber": "Phone Number",
+        "citizenship": "Citizenship",
+        "profession": "Occupation",
+        "pin": "PIN",
+        "signUpRefferalCode": "Sign Up Referral Code",
+        "seeProfile": "See Profile",
+        "deleteAccount": "Delete Account",
+        "change": "Change"
+      }
+    }
+  },
+  "orderDetail": {
+    "title": "Order Detail",
+    "orderItemNote": "Notes",
+    "pickup": {
+      "title": "Pick Up",
+      "pickupDistance": "from your location",
+      "choosePickupTime": "Choose Pick Up Time"
+    },
+    "delivery": {
+      "title": "Delivery",
+      "address": "Alamat Delivery",
+      "changeAddress": "Change Address",
+      "notes": "Catatan",
+      "changeNotes": "Ubah Catatan",
+      "courierChoice": "Pilihan Kurir"
+    },
+    "orderList": {
+      "title": "Order List",
+      "addMenu": "Menu"
+    },
+    "summary": {
+      "title": "Payment Summary"
+    }
+  },
+  "voucherList": {
+    "title": "Your Vouchers"
+  },
+  "outlet": {
+    "selectOutlet": "Select Outlet",
+    "open": "Open",
+    "searchPlaceholder": "Find outlets you want...",
+    "allBrands": "All Brands",
+    "closed": "Closed",
+    "openAgainAt": "Open again at",
+    "notFound": "Hmm.. can't find \"{{keyword}}\"",
+    "tryEntering": "Try entering the outlet name that you want."
+  }
+}

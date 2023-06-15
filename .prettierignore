@@ -1,0 +1,5 @@
+.yarn/**
+.vscode/**
+ios/**
+android/**
+node_modules/**
